@@ -46,15 +46,15 @@ Start the server
 ![Server](./resources/img/MAMP3.png)
 
 Browse to site location
-http://localhost/Camagru
+http://localhost/invoice-system
 
 > Note - by default the server is set to port 80
 
-## Configuring Camagru
+## Configuring the invoice system
 
-### Changing Camagru Variables
+### Changing the invoice system Variables
 
-In [Insert path to your MAP/WAMP/LAMP directory]/apache2/htdocs/Camagru/config/database.php
+In [Insert path to your MAP/WAMP/LAMP directory]/apache2/htdocs/invoice-system/config/database.php
 
 Change the password of `$db_pass`, to the password you set during bitnami installation/setup.
 
@@ -65,7 +65,7 @@ Change the password of `$db_pass`, to the password you set during bitnami instal
 To create database and tables:
 
 In the browser, navigate to
-http://localhost/Camagru/config/setup.php
+http://localhost/invoice-system/config/setup.php
 
 ![Database_Configuration](./resources/img/setup.png)
 
