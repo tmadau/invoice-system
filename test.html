@@ -13,7 +13,21 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>hell there I am an invoice</h1>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <button
+          class="btn btn-info dropdown-toggle"
+          type="button"
+          data-toggle="dropdown"
+        >
+          Invoice <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="invoices.php">Invoice List</a></li>
+          <li><a href="create_invoice.php">Create Invoice</a></li>
+        </ul>
+      </li>
+    </ul>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

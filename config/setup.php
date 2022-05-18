@@ -22,28 +22,28 @@
         $query = "CREATE TABLE `customer` (
             `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
             `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-            `customer_name` text NULL,
-            `customer_address` varchar(250) NOT NULL,
+            `customer_name` varchar(250) NOT NULL,
+            `customer_address` text NOT NULL,
             `total_before_tax` decimal(10,2) NOT NULL,
             `total_tax` decimal(10,2) NOT NULL,
-            `tax_per_item` varchar(250) NOT NULL,
-            `after_tax` double(10,2) NOT NULL,
+            `per_tax` varchar(250) NOT NULL,
+            `after_tax_total` double(10,2) NOT NULL,
             `amount_paid` decimal(10,2) NOT NULL,
             `amount_due` decimal(10,2) NOT NULL,
             `note` text NOT NULL
         ) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin";
         $dbh->exec($query);
-        echo "Users Table Created Successfully <br />";
+        echo "Customer Table Created Successfully <br />";
     }
     catch (PDOException $e) {
-        echo "Error Creating Table: " .$e->getMessage(). "<br /> Aborting process <br />";
+        echo "Error Creating Customer Table: " .$e->getMessage(). "<br /> Aborting process <br />";
     }
 
     //Create table for invoice item
     try {
         $dbh = new PDO($create->dsn, $create->db_user, $create->db_pass);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $query = "CREATE TABLE `posts` (
+        $query = "CREATE TABLE `invoice` (
             `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
             `invoice_id` INT(11) NOT NULL,
             `invoice_code` varchar(50) NOT NULL,
@@ -53,10 +53,10 @@
             `final_amount` decimal(10,2) NOT NULL
         ) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin";
         $dbh->exec($query);
-        echo "Posts Table Created Successfully<br />";
+        echo "Invoice Table Created Successfully<br />";
     }
     catch (PDOException $e) {
-        echo "Error Creating Posts Table: " .$e->getMessage(). "<br />Aborting process<br />";
+        echo "Error Creating Invoice Table: " .$e->getMessage(). "<br />Aborting process<br />";
     }
 
 ?>
