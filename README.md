@@ -39,11 +39,11 @@ git clone https://github.com/tmadau/invoice-system.git
 
 Locate and run the executable file
 
-![Server](./uploads/MAMPEXE.png)
+![Server](./resources/img/MAMPEXE.png)
 
 Start the server
 
-![Server](./uploads/MAMP3.png)
+![Server](./resources/img/MAMP3.png)
 
 Browse to site location
 http://localhost/Camagru
@@ -58,7 +58,7 @@ In [Insert path to your MAP/WAMP/LAMP directory]/apache2/htdocs/Camagru/config/d
 
 Change the password of `$db_pass`, to the password you set during bitnami installation/setup.
 
-![Database_Configuration](./uploads/db_pass.png)
+![Database_Configuration](./resources/img/db_pass.png)
 
 ### Creating Database and Table
 
@@ -67,21 +67,21 @@ To create database and tables:
 In the browser, navigate to
 http://localhost/Camagru/config/setup.php
 
-![Database_Configuration](./uploads/setup.png)
+![Database_Configuration](./resources/img/setup.png)
 
 # Samples | Screenshots
 
 ## Landing | Home page
 
-![Screenshot_Landingpage](./uploads/landing.png)
+![Screenshot_Landingpage](./resources/img/landing.png)
 
 ## Webcam
 
-![Screenshot_Landingpage](./uploads/webcam.png)
+![Screenshot_Landingpage](./resources/img/webcam.png)
 
 ### Uploading an image
 
-![Screenshot_Landingpage](./uploads/imageupload.png)
+![Screenshot_Landingpage](./resources/img/imageupload.png)
 
 # Project Insight
 
