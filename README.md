@@ -2,7 +2,7 @@
 
 <img src="./resources/img/challenge.png" width="100%">
 
-Building a simple invoice systems that allows individuals to add and invoice. It caters for taxes, before taxes, and after tax. The total amount the individual has to pay. It also has an API call for [CRUD] _creating_, _reading_, _updating_ and _deleting_.
+Building a simple invoice system that allows individuals to add an invoice. It caters for taxes, before taxes, and after tax. The total amount the individual has to pay. It also has an API call for [CRUD] _creating_, _reading_, _updating_ and _deleting_.
 
 # Installation
 
