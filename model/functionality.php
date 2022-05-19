@@ -2,7 +2,7 @@
 
     include_once('../config/database.php');
 
-    class control {
+    class InvoiceSystem {
         public $link;
 
         //CONSTRUCT FUNCTION TO CONNECT TO THE DATABASE

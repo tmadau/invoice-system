@@ -15,11 +15,13 @@
     <div class="container-sm">
       <h1 class="pt-3 pb-3">Invoice System</h1>
       <h2>From:</h2>
-      <p>d6 Group</p>
-      <p>Monument Office Park, Block 6, Suite 101</p>
-      <p>71 Steenbok Avenue, Monument Park</p>
-      <p>Pretoria, 0181</p>
-      <p>admin@d6.com</p>
+      <p>
+        d6 Group <br />
+        Monument Office Park, Block 6, Suite 101 <br />
+        71 Steenbok Avenue, Monument Park <br />
+        Pretoria, 0181<br />
+        admin@d6.com
+      </p>
       <h2>To:</h2>
       <div class="form-group col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <input
