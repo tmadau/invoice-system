@@ -1,13 +1,11 @@
 <?php 
-session_start();
-include('inc/header.php');
-include 'Invoice.php';
-$invoice = new Invoice();
-$invoice->checkLoggedIn();
+  session_start();
+  include('inc/header.php');
+  include 'Invoice.php';
+  $invoice = new Invoice();
 ?>
 <title>phpzag.com : Demo Build Invoice System with PHP & MySQL</title>
 <script src="js/invoice.js"></script>
-<link href="css/style.css" rel="stylesheet">
 <?php include('inc/container.php');?>
 	<div class="container">		
 	  <h2 class="title">Invoice System</h2>
@@ -17,7 +15,7 @@ $invoice->checkLoggedIn();
           <tr>
             <th>Invoice No.</th>
             <th>Create Date</th>
-            <th>Customer Name</th>
+            <th>business Name</th>
             <th>Invoice Total</th>
             <th>Print</th>
             <th>Edit</th>

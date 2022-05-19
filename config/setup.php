@@ -15,15 +15,15 @@
         exit(-1);
     }
 
-    //Create table for customers
+    //Create table for business
     try {
         $dbh = new PDO($create->dsn, $create->db_user, $create->db_pass);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $query = "CREATE TABLE `customer` (
+        $query = "CREATE TABLE `business` (
             `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
             `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-            `customer_name` varchar(250) NOT NULL,
-            `customer_address` text NOT NULL,
+            `business_name` varchar(250) NOT NULL,
+            `business_address` text NOT NULL,
             `total_before_tax` decimal(10,2) NOT NULL,
             `total_tax` decimal(10,2) NOT NULL,
             `per_tax` varchar(250) NOT NULL,
@@ -33,10 +33,10 @@
             `note` text NOT NULL
         ) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin";
         $dbh->exec($query);
-        echo "Customer Table Created Successfully <br />";
+        echo "business Table Created Successfully <br />";
     }
     catch (PDOException $e) {
-        echo "Error Creating Customer Table: " .$e->getMessage(). "<br /> Aborting process <br />";
+        echo "Error Creating business Table: " .$e->getMessage(). "<br /> Aborting process <br />";
     }
 
     //Create table for invoice item
