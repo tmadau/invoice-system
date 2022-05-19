@@ -1,3 +1,4 @@
+<?php include('controller/view_invoices.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +18,7 @@
         <a class="nav-link active" aria-current="page" href="index.php">Create Invoice</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./view/view_invoices.php">View Invoices</a>
+        <a class="nav-link" href="view/view_invoices.php">View Invoices</a>
       </li>
     </ul>
     <div class="container-sm">
@@ -36,13 +37,13 @@
           value="<?php echo $invoice_values['business_name']; ?>"
           type="text"
           class="form-control"
-          name="companyName"
-          id="companyName"
+          name="company_name"
+          id="company_name"
           placeholder="Company Name:"
           autocomplete="off"
         />
       </div>
-      <div class="form-floating col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-3 mb-3">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-3 mb-3">
         <textarea
           class="form-control"
           placeholder="Your Address"
@@ -69,20 +70,20 @@
             <th width="15%">Total</th>
           </tr>
           <?php 
-                $count = 0;
-                foreach($invoiceItems as $invoiceItem){
-                    $count++;
+              $count = 0;
+              foreach($invoiceItems as $invoiceItem){
+                $count++;
             ?>
           <tr>
-            <td><input class="itemRow" type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
             <td>
               <input type="text" value="<?php echo $invoiceItem["invoice_code"]; ?>"
-              name="productCode[]" id="productCode_<?php echo $count; ?>"
+              name="product_code[]" id="product_code_<?php echo $count; ?>"
               class="form-control" autocomplete="off">
             </td>
             <td>
               <input type="text" value="<?php echo $invoiceItem["invoice_name"]; ?>"
-              name="productName[]" id="productName_<?php echo $count; ?>"
+              name="product_name[]" id="product_name_<?php echo $count; ?>"
               class="form-control" autocomplete="off">
             </td>
             <td>
@@ -102,7 +103,7 @@
             </td>
             <input
               type="hidden"
-              value="<?php echo $invoiceItem['order_item_id']; ?>"
+              value="<?php echo $invoiceItem['invoice_id']; ?>"
               class="form-control"
               name="itemId[]"
             />
@@ -135,7 +136,7 @@
             value="<?php echo $invoice_values['per_tax']; ?>"
             type="number"
             class="form-control"
-            name="text_rate"
+            name="tax_rate"
             id="tax_rate"
             placeholder="%: Tax Rate"
             autocomplete="off"
@@ -180,7 +181,7 @@
             type="number"
             class="form-control"
             name="amount_due"
-            id="amount due"
+            id="amount_due"
             placeholder="R: Amount Due"
             autocomplete="off"
           />
@@ -216,7 +217,7 @@
               />
             </div>
           </div>
-          <div class="form-group mb-100 ">
+          <div class="form-group">
             <input
               type="hidden"
               value="<?php echo $_SESSION['id']; ?>"
@@ -240,6 +241,7 @@
           </div>
         </div>
       </form>
+      <br><br><br><br>
     </div>
     <footer class="text-white bg-dark text-center">All right reserved takalani</footer>
     <script

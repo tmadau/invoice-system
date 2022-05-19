@@ -1,3 +1,7 @@
+<?php
+  include_once('../model/invoice_management.php');
+  $invoice = new InvoiceSystem();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

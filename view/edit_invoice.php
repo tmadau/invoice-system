@@ -1,3 +1,4 @@
+<?php include('controller/edit_controller.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,8 +37,8 @@
           value="<?php echo $invoice_values['business_name']; ?>"
           type="text"
           class="form-control"
-          name="companyName"
-          id="companyName"
+          name="company_name"
+          id="company_name"
           placeholder="Company Name:"
           autocomplete="off"
         />
@@ -75,15 +76,15 @@
                 }
             ?>
           <tr>
-            <td><input class="itemRow" type="checkbox" /></td>
+            <td><input type="checkbox" /></td>
             <td>
               <input type="text" value="<?php echo $invoiceItem["invoice_code"]; ?>"
-              name="productCode[]" id="productCode_<?php echo $count; ?>"
+              name="product_code[]" id="product_code_<?php echo $count; ?>"
               class="form-control" autocomplete="off">
             </td>
             <td>
               <input type="text" value="<?php echo $invoiceItem["invoice_name"]; ?>"
-              name="productName[]" id="productName_<?php echo $count; ?>"
+              name="product_name[]" id="product_name_<?php echo $count; ?>"
               class="form-control" autocomplete="off">
             </td>
             <td>
@@ -103,7 +104,7 @@
             </td>
             <input
               type="hidden"
-              value="<?php echo $invoiceItem['order_item_id']; ?>"
+              value="<?php echo $invoiceItem['invoice_id']; ?>"
               class="form-control"
               name="itemId[]"
             />
@@ -136,7 +137,7 @@
             value="<?php echo $invoice_values['per_tax']; ?>"
             type="number"
             class="form-control"
-            name="text_rate"
+            name="tax_rate"
             id="tax_rate"
             placeholder="%: Tax Rate"
             autocomplete="off"
