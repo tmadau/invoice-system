@@ -14,10 +14,10 @@
   <body class="bg-light">
     <ul class="nav nav-tabs bg-dark">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="index.php">Create Invoice</a>
+        <a class="nav-link active" aria-current="page" href="../index.php">Create Invoice</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./view/view_invoices.php">View Invoices</a>
+        <a class="nav-link" href="view_invoices.php">View Invoices</a>
       </li>
     </ul>
     <div class="container-sm">
@@ -68,10 +68,11 @@
             <th width="15%">Price</th>
             <th width="15%">Total</th>
           </tr>
-          <?php 
+            <?php
                 $count = 0;
-                foreach($invoiceItems as $invoiceItem){
+                foreach($invoiceItems as $invoiceItem) {
                     $count++;
+                }
             ?>
           <tr>
             <td><input class="itemRow" type="checkbox" /></td>
@@ -111,7 +112,7 @@
         </table>
         <div class="row">
           <div class="col-xs-12 col-sm-3 col-md-3 mb-3">
-            <button class="btn btn-danger" id="removeRows" type="button">
+            <button class="btn btn-danger delete" id="removeRows" type="button">
               - Delete
             </button>
             <button class="btn btn-primary" id="addRows" type="button">
@@ -216,7 +217,7 @@
               />
             </div>
           </div>
-          <div class="form-group mb-100 ">
+          <div class="form-group">
             <input
               type="hidden"
               value="<?php echo $_SESSION['id']; ?>"
@@ -241,7 +242,6 @@
         </div>
       </form>
     </div>
-    <footer class="text-white bg-dark text-center">All right reserved takalani</footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"

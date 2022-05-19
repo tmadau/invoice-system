@@ -1,6 +1,6 @@
 <?php    
     session_start();
-    include '../model/functionality.php';
+    include '../model/invoice_management.php';
     $invoice = new InvoiceSystem();
     if ($_POST['action'] == 'delete_invoice' && $_POST['id']) {
         $invoice->deleteInvoice($_POST['id']);	
