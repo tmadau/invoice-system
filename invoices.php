@@ -4,8 +4,7 @@
   include 'Invoice.php';
   $invoice = new Invoice();
 ?>
-<title>phpzag.com : Demo Build Invoice System with PHP & MySQL</title>
-<script src="js/invoice.js"></script>
+<script src="lib/js/feature.js"></script>
 <?php include('inc/container.php');?>
 	<div class="container">		
 	  <h2 class="title">Invoice System</h2>
