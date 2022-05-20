@@ -40,9 +40,9 @@
           </tr>
         </thead>
         <?php		
-		    $invoiceList = $invoice->getInvoiceList();
-            foreach($invoiceList as $invoiceDetails) {
-		    $invoiceDate = date("d/M/Y, H:i:s", strtotime($invoiceDetails["order_date"]));
+		      $invoiceList = $invoice->getInvoiceList();
+          foreach($invoiceList as $invoiceDetails) {
+		        $invoiceDate = date("d/M/Y, H:i:s", strtotime($invoiceDetails["order_date"]));
             echo '
             <tr>
               <td>'.$invoiceDetails["order_id"].'</td>
@@ -53,7 +53,7 @@
               <td><a href="edit_invoice.php?update_id='.$invoiceDetails["order_id"].'"  title="Edit Invoice"><span class="glyphicon glyphicon-edit"></span></a></td>
               <td><a href="#" id="'.$invoiceDetails["order_id"].'" class="deleteInvoice"  title="Delete Invoice"><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>';
-            }       
+          }       
         ?>
       </table>
     </div>
