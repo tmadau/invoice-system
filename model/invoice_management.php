@@ -61,11 +61,11 @@
                 return $e->getMessage();
             }
         }
-        function get_invoice_list($business_id) {
+        function get_invoice_list() {
             try {
-                $query = $this->link->prepare(" SELECT * FROM business WHERE id = ? ");
-                $values = array($business_id);
-                $query->execute($values);
+                $query = $this->link->prepare(" SELECT * FROM business WHERE id = id ");
+                // $values = array($business_id);
+                $query->execute();
             }
             catch (PDOException $e) {
                 return $e->getMessage();

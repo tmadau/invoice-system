@@ -1,7 +1,3 @@
-<?php
-  include_once('../model/invoice_management.php');
-  $invoice = new InvoiceSystem();
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,19 +35,21 @@
             <th>Delete</th>
           </tr>
         </thead>
-        <?php		
-		      $invoiceList = $invoice->getInvoiceList();
+        <?php
+          include_once('../model/invoice_management.php');
+          $invoice = new InvoiceSystem();
+		      $invoiceList = $invoice->get_invoice_list();
           foreach($invoiceList as $invoiceDetails) {
-		        $invoiceDate = date("d/M/Y, H:i:s", strtotime($invoiceDetails["order_date"]));
+		        $invoiceDate = date("d/M/Y, H:i:s", strtotime($invoiceDetails["date"]));
             echo '
             <tr>
-              <td>'.$invoiceDetails["order_id"].'</td>
+              <td>'.$invoiceDetails["id"].'</td>
               <td>'.$invoiceDate.'</td>
-              <td>'.$invoiceDetails["order_receiver_name"].'</td>
-              <td>'.$invoiceDetails["order_total_after_tax"].'</td>
-              <td><a href="print_invoice.php?invoice_id='.$invoiceDetails["order_id"].'" title="Print Invoice"><span class="glyphicon glyphicon-print"></span></a></td>
-              <td><a href="edit_invoice.php?update_id='.$invoiceDetails["order_id"].'"  title="Edit Invoice"><span class="glyphicon glyphicon-edit"></span></a></td>
-              <td><a href="#" id="'.$invoiceDetails["order_id"].'" class="deleteInvoice"  title="Delete Invoice"><span class="glyphicon glyphicon-remove"></span></a></td>
+              <td>'.$invoiceDetails["business_name"].'</td>
+              <td>'.$invoiceDetails["after_tax_total"].'</td>
+              <td><a href="print_invoice.php?invoice_id='.$invoiceDetails["id"].'" title="Print Invoice"><span class="glyphicon glyphicon-print"></span></a></td>
+              <td><a href="edit_invoice.php?update_id='.$invoiceDetails["id"].'"  title="Edit Invoice"><span class="glyphicon glyphicon-edit"></span></a></td>
+              <td><a href="#" id="'.$invoiceDetails["id"].'" class="deleteInvoice"  title="Delete Invoice"><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>';
           }       
         ?>

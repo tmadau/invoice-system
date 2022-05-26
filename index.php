@@ -1,4 +1,3 @@
-<?php include('controller/view_invoices.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,7 +14,9 @@
   <body class="bg-light">
     <ul class="nav nav-tabs bg-dark">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="index.php">Create Invoice</a>
+        <a class="nav-link active" aria-current="page" href="index.php"
+          >Create Invoice</a
+        >
       </li>
       <li class="nav-item">
         <a class="nav-link" href="view/view_invoices.php">View Invoices</a>
@@ -34,7 +35,6 @@
       <h2>To:</h2>
       <div class="form-group col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <input
-          value="<?php echo $invoice_values['business_name']; ?>"
           type="text"
           class="form-control"
           name="company_name"
@@ -43,21 +43,19 @@
           autocomplete="off"
         />
       </div>
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-3 mb-3">
+      <div class="form-group col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-3 mb-3">
         <textarea
           class="form-control"
-          placeholder="Your Address"
+          placeholder="Your Address:"
           rows="7"
           name="address"
           id="address"
-        >
-          <?php echo $invoice_values['business_address']; ?>
-        </textarea>
+        ></textarea>
       </div>
-      <form>
+      <form class="mb-7">
         <table
           class="table table-bordered table-hover table-striped table-default"
-          id="invoiceItem"
+          id="invoice_item"
         >
           <tr>
             <th width="2%">
@@ -69,46 +67,54 @@
             <th width="15%">Price</th>
             <th width="15%">Total</th>
           </tr>
-          <?php 
-              $count = 0;
-              foreach($invoiceItems as $invoiceItem){
-                $count++;
-            ?>
           <tr>
             <td><input type="checkbox" /></td>
             <td>
-              <input type="text" value="<?php echo $invoiceItem["invoice_code"]; ?>"
-              name="product_code[]" id="product_code_<?php echo $count; ?>"
-              class="form-control" autocomplete="off">
+              <input
+                type="text"
+                name="product_code[]"
+                id="product_code_1"
+                class="form-control"
+                autocomplete="off"
+              />
             </td>
             <td>
-              <input type="text" value="<?php echo $invoiceItem["invoice_name"]; ?>"
-              name="product_name[]" id="product_name_<?php echo $count; ?>"
-              class="form-control" autocomplete="off">
+              <input
+                type="text"
+                name="product_name[]"
+                id="product_name_1"
+                class="form-control"
+                autocomplete="off"
+              />
             </td>
             <td>
-              <input type="number" value="<?php echo $invoiceItem["quantity"]; ?>"
-              name="quantity[]" id="quantity_<?php echo $count; ?>"
-              class="form-control quantity" autocomplete="off">
+              <input
+                type="number"
+                name="quantity[]"
+                id="quantity_1"
+                class="form-control"
+                autocomplete="off"
+              />
             </td>
             <td>
-              <input type="number" value="<?php echo $invoiceItem["amount"]; ?>"
-              name="price[]" id="price_<?php echo $count; ?>"
-              class="form-control price" autocomplete="off">
+              <input
+                type="number"
+                name="price[]"
+                id="price_1"
+                class="form-control"
+                autocomplete="off"
+              />
             </td>
             <td>
-              <input type="number" value="<?php echo $invoiceItem["final_amount"]; ?>"
-              name="total[]" id="total_<?php echo $count; ?>"
-              class="form-control total" autocomplete="off">
+              <input
+                type="number"
+                name="total[]"
+                id="total_1"
+                class="form-control"
+                autocomplete="off"
+              />
             </td>
-            <input
-              type="hidden"
-              value="<?php echo $invoiceItem['invoice_id']; ?>"
-              class="form-control"
-              name="itemId[]"
-            />
           </tr>
-          <?php } ?>
         </table>
         <div class="row">
           <div class="col-xs-12 col-sm-3 col-md-3 mb-3">
@@ -122,68 +128,62 @@
         </div>
         <div class="form-group col-xs-12 col-sm-4 col-md-4 col-lg-4 mb-2">
           <input
-            value="<?php echo $invoice_values['total_before_tax']; ?>"
+            value=""
             type="number"
             class="form-control"
             name="sub_total"
             id="sub_total"
             placeholder="R: Sub total"
-            autocomplete="off"
           />
         </div>
         <div class="form-group col-xs-12 col-sm-4 col-md-4 col-lg-4 mb-2">
           <input
-            value="<?php echo $invoice_values['per_tax']; ?>"
+            value=""
             type="number"
             class="form-control"
             name="tax_rate"
             id="tax_rate"
             placeholder="%: Tax Rate"
-            autocomplete="off"
           />
         </div>
         <div class="form-group col-xs-12 col-sm-4 col-md-4 col-lg-4 mb-2">
           <input
-            value="<?php echo $invoice_values['tax_total']; ?>"
+            value=""
             type="number"
             class="form-control"
             name="tax_amount"
             id="tax_mount"
             placeholder="R: Tax Amount"
-            autocomplete="off"
           />
         </div>
         <div class="form-group col-xs-12 col-sm-4 col-md-4 col-lg-4 mb-2">
           <input
-            value="<?php echo $invoice_values['after_tax_total']; ?>"
+            value=""
             type="number"
             class="form-control"
             name="after_tax_total"
             id="after_tax_total"
             placeholder="R: Total"
-            autocomplete="off"
           />
         </div>
         <div class="form-group col-xs-12 col-sm-4 col-md-4 col-lg-4 mb-2">
           <input
-            value="<?php echo $invoice_values['amount_paid']; ?>"
+            value=""
             type="number"
             class="form-control"
             name="amount_paid"
             id="amount_paid"
             placeholder="R: Amount Paid"
-            autocomplete="off"
           />
         </div>
         <div class="form-group col-xs-12 col-sm-4 col-md-4 col-lg-4 mb-2">
           <input
-            value="<?php echo $invoice_values['amount_due']; ?>"
+            value=""
             type="number"
             class="form-control"
             name="amount_due"
             id="amount_due"
             placeholder="R: Amount Due"
-            autocomplete="off"
           />
         </div>
         <div class="row">
@@ -195,12 +195,9 @@
                 rows="5"
                 name="notes"
                 id="notes"
-                placeholder="Your Notes"
-              >
-                <?php echo $invoice_values['note']; ?></textarea
-              >
+                placeholder="Your Notes:"
+              ></textarea>
             </div>
-
             <div class="form-group">
               <input
                 type="hidden"
@@ -241,9 +238,11 @@
           </div>
         </div>
       </form>
-      <br><br><br><br>
+      <br /><br /><br /><br />
     </div>
-    <footer class="text-white bg-dark text-center">All right reserved takalani</footer>
+    <footer class="text-white bg-dark text-center">
+      All right reserved takalani
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
